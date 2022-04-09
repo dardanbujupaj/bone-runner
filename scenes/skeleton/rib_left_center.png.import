@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/arm_left.png-3560d262122a0fbd74d798601add430d.stex"
+path="res://.import/rib_left_center.png-9d80144a3633009d5b2fd63c12a4d267.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/skeleton/arm_left.png"
-dest_files=[ "res://.import/arm_left.png-3560d262122a0fbd74d798601add430d.stex" ]
+source_file="res://scenes/skeleton/rib_left_center.png"
+dest_files=[ "res://.import/rib_left_center.png-9d80144a3633009d5b2fd63c12a4d267.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

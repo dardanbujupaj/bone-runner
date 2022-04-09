@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tigh.png-3071b1a2fe760940dd45fe633a4d59c5.stex"
+path="res://.import/shank_right.png-a120a9256f928e1deeaacee27eebfcee.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/skeleton/tigh.png"
-dest_files=[ "res://.import/tigh.png-3071b1a2fe760940dd45fe633a4d59c5.stex" ]
+source_file="res://scenes/skeleton/shank_right.png"
+dest_files=[ "res://.import/shank_right.png-a120a9256f928e1deeaacee27eebfcee.stex" ]
 
 [params]
 

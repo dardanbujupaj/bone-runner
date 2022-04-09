@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/shank.png-ef3a3482ebfbb63576ae1602f8cdcc7e.stex"
+path="res://.import/rib_left_bottom.png-6f8d6c3d5a85417c7c8f6dfa27411e79.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/skeleton/shank.png"
-dest_files=[ "res://.import/shank.png-ef3a3482ebfbb63576ae1602f8cdcc7e.stex" ]
+source_file="res://scenes/skeleton/rib_left_bottom.png"
+dest_files=[ "res://.import/rib_left_bottom.png-6f8d6c3d5a85417c7c8f6dfa27411e79.stex" ]
 
 [params]
 

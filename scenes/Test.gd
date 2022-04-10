@@ -9,10 +9,13 @@ func _ready() -> void:
 	randomize()
 
 func _physics_process(delta: float) -> void:
-	bone.position = bone.position.linear_interpolate(get_local_mouse_position(), 10 * delta)
+	# bone.position = bone.position.linear_interpolate(get_local_mouse_position(), 10 * delta)
+	pass
 
 func _on_Timer_timeout() -> void:
 	var spawned_bone := preload("res://scenes/skeleton/ArmLeft.tscn").instance() as RigidBody2D
+	
+	var sprite = Sprite.new()
 	
 	spawned_bone.position = bone_spawner.position
 	add_child(spawned_bone)

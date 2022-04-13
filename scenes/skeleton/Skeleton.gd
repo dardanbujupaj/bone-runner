@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 var start_position: Vector2
 
-
+var velocity: Vector2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -10,8 +10,22 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta: float) -> void:
-#	pass
+func _physics_process(delta: float) -> void:
+	
+	velocity.y += 800 * delta
+	
+	if is_on_floor() and Input.is_action_just_pressed("up"):
+		velocity.y -= 800
+	
+	
+	var horizontal_input = Input.get_action_strength("right") - Input.get_action_strength("left")
+	
+	
+	velocity.x += horizontal_input * delta * 100
+	
+	
+	velocity = move_and_slide(velocity)
+
 
 func die() ->  void:
 	var nodes_to_check = get_children()
@@ -24,6 +38,7 @@ func die() ->  void:
 			create_bone(n)
 	
 	position = start_position
+	velocity = Vector2()
 	
 	
 	

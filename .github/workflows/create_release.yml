@@ -53,9 +53,6 @@ jobs:
         # Download and extract export templates
         curl $BASE_URL"_export_templates.tpz" -o bin/templates.zip
         7z e -y bin/templates.zip -o"/home/runner/.local/share/godot/templates/$GODOT_VERSION.$SUFFIX"
-        cd "/home/runner/.local/share/godot/templates/$GODOT_VERSION.$SUFFIX"
-        pwd
-        ls
       env:
         GODOT_VERSION: ${{ env.GODOT_VERSION }}
         GODOT_PRERELEASE: ${{ env.GODOT_PRERELEASE }}
@@ -119,11 +116,7 @@ jobs:
 
         # Download and extract export templates
         curl $BASE_URL"_export_templates.tpz" -o bin/templates.zip
-        7z e -y bin/templates.zip -o"~/Library/Application Support/Godot/templates/$GODOT_VERSION.$SUFFIX"
-        
-        cd "~/Library/Application Support/Godot/templates/$GODOT_VERSION.$SUFFIX"
-        pwd
-        ls
+        7z e -y bin/templates.zip -o"/Users/runner/Library/Application Support/Godot/templates/$GODOT_VERSION.$SUFFIX"
       env:
         GODOT_VERSION: ${{ env.GODOT_VERSION }}
         GODOT_PRERELEASE: ${{ env.GODOT_PRERELEASE }}

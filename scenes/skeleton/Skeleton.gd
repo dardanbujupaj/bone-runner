@@ -1,15 +1,12 @@
 extends KinematicBody2D
 
+var start_position: Vector2
 
-# Declare member variables here. Examples:
-# var a: int = 2
-# var b: String = "text"
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	yield(get_tree().create_timer(5), "timeout")
-	die()
+	start_position = position
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -26,7 +23,7 @@ func die() ->  void:
 		if n is Sprite:
 			create_bone(n)
 	
-	hide()
+	position = start_position
 	
 	
 	
@@ -39,6 +36,10 @@ func create_bone(sprite: Sprite) -> void:
 	
 	bone.set_texture(sprite.texture)
 	
-	bone.linear_velocity = Vector2(300, 0)
-	
-	get_parent().add_child(bone)
+	# bone.linear_velocity = Vector2(300, 0)
+	get_parent().call_deferred("add_child", bone)
+
+
+
+func _on_HitArea_area_entered(area: Area2D) -> void:
+	die()

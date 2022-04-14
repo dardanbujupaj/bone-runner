@@ -1,15 +1,5 @@
 extends KinematicBody2D
 
-var start_position: Vector2
-
-var velocity: Vector2
-
-onready var animation_tree = $AnimationTree
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	start_position = position
-
 
 const ACCELERATION = 1800
 const DECCELERATION = 3600
@@ -21,6 +11,19 @@ const JUMP_STRENGTH = 900
 const JUMP_GRAVITY = 800
 const RAISE_GRAVITY = 2000
 const FALL_GRAVITY = 3200
+
+
+var start_position: Vector2
+
+var velocity: Vector2
+
+onready var animation_tree = $AnimationTree
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	start_position = position
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
@@ -95,7 +98,6 @@ func create_bone(sprite: Sprite) -> void:
 	
 	# bone.linear_velocity = Vector2(300, 0)
 	get_parent().call_deferred("add_child", bone)
-
 
 
 func _on_HitArea_area_entered(area: Area2D) -> void:

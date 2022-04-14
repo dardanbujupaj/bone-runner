@@ -4,6 +4,8 @@ var start_position: Vector2
 
 var velocity: Vector2
 
+onready var animation_tree = $AnimationTree
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	start_position = position
@@ -25,7 +27,9 @@ func _physics_process(delta: float) -> void:
 	
 	
 	velocity = move_and_slide(velocity)
-
+	
+	animation_tree["parameters/conditions/moving"] = abs(velocity.x) > 1.0
+	animation_tree["parameters/conditions/not_moving"] = abs(velocity.x) <= 1.0
 
 func die() ->  void:
 	var nodes_to_check = get_children()

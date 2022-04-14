@@ -11,25 +11,62 @@ func _ready() -> void:
 	start_position = position
 
 
+const ACCELERATION = 1800
+const DECCELERATION = 3600
+
+const MAX_SPEED = 1000
+
+const JUMP_STRENGTH = 900
+
+const JUMP_GRAVITY = 800
+const RAISE_GRAVITY = 2000
+const FALL_GRAVITY = 3200
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	
-	velocity.y += 800 * delta
+	if can_jump():
+		if Input.is_action_just_pressed("up"):
+			velocity.y -= JUMP_STRENGTH
 	
-	if is_on_floor() and Input.is_action_just_pressed("up"):
-		velocity.y -= 800
+	if velocity.y < 0:
+		if Input.is_action_pressed("up"):
+			velocity.y += JUMP_GRAVITY * delta
+		else:
+			velocity.y += RAISE_GRAVITY * delta
+	else:
+		velocity.y += FALL_GRAVITY * delta
 	
 	
-	var horizontal_input = Input.get_action_strength("right") - Input.get_action_strength("left")
+	var horizontal_input := Input.get_action_strength("right") - Input.get_action_strength("left")
 	
 	
-	velocity.x += horizontal_input * delta * 100
+	if abs(horizontal_input) > 0:
+		$Sprites.scale.x = horizontal_input
+		
+		if abs(velocity.x) != abs(horizontal_input):
+			velocity.x += horizontal_input * delta * DECCELERATION
+		velocity.x += horizontal_input * delta * ACCELERATION
+	else:
+		var decceleration = sign(velocity.x) * delta * DECCELERATION
+		if abs(velocity.x) < abs(decceleration):
+			velocity.x = 0
+		else:
+			velocity.x -= decceleration
 	
 	
-	velocity = move_and_slide(velocity)
+	velocity.x = clamp(velocity.x, -MAX_SPEED, MAX_SPEED)
 	
-	animation_tree["parameters/conditions/moving"] = abs(velocity.x) > 1.0
-	animation_tree["parameters/conditions/not_moving"] = abs(velocity.x) <= 1.0
+	
+	velocity = move_and_slide(velocity, Vector2.UP)
+	
+	animation_tree["parameters/conditions/moving"] = abs(horizontal_input) != 0.0
+	animation_tree["parameters/conditions/not_moving"] = abs(horizontal_input) == 0.0
+
+
+func can_jump():
+	return is_on_floor()
+
 
 func die() ->  void:
 	var nodes_to_check = get_children()
@@ -52,6 +89,7 @@ func create_bone(sprite: Sprite) -> void:
 	
 	bone.position = sprite.global_position + sprite.offset - sprite.texture.get_size() / 2
 	bone.rotation = sprite.global_rotation
+	bone.linear_velocity = velocity
 	
 	bone.set_texture(sprite.texture)
 	

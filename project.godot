@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="gwj-44"
-run/main_scene="res://scenes/levels/TestLevel.tscn"
+run/main_scene="res://scenes/levels/Dungeon01.tscn"
 config/icon="res://icon.png"
 
 [autoload]

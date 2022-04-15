@@ -17,7 +17,7 @@ collision_layer = 4
 collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Axe/HitBox"]
-polygon = PoolVector2Array( 30, -53, -35, -52, -59, -16, -58, 32, -13, 69, 22, 65, 49, 34, 48, -14 )
+polygon = PoolVector2Array( 76, -10, -80, 2, -53, 62, -1, 89, 55, 61 )
 
 [node name="RigidBody2D" type="RigidBody2D" parent="Axe/HitBox"]
 collision_layer = 0
@@ -25,7 +25,7 @@ collision_mask = 8
 mode = 3
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Axe/HitBox/RigidBody2D"]
-polygon = PoolVector2Array( 30, -53, -35, -52, -59, -16, -58, 32, -13, 69, 22, 65, 49, 34, 48, -14 )
+polygon = PoolVector2Array( -94, -3, -88, 34, -59, 74, -15, 103, 23, 100, 54, 83, 77, 38, 88, -6, 83, -24 )
 
 [node name="Tween" type="Tween" parent="."]
 repeat = true

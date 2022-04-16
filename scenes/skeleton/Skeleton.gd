@@ -106,7 +106,7 @@ func create_bone(sprite: Sprite) -> void:
 	bone.rotation = sprite.global_rotation
 	bone.linear_velocity = velocity
 	
-	bone.set_texture(sprite.texture)
+	bone.texture = sprite.texture
 	
 	# bone.linear_velocity = Vector2(300, 0)
 	get_parent().call_deferred("add_child", bone)

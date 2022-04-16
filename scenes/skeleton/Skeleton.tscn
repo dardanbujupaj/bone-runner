@@ -2749,18 +2749,21 @@ offset = Vector2( 12, 82 )
 [node name="HandRight" type="Sprite" parent="Sprites"]
 position = Vector2( 60.9758, -123.899 )
 rotation = 0.168873
+scale = Vector2( 1, 1 )
 texture = ExtResource( 5 )
 offset = Vector2( -53, 16 )
 
 [node name="ForearmRight" type="Sprite" parent="Sprites"]
 position = Vector2( 46.3024, -156.834 )
 rotation = 0.168873
+scale = Vector2( 1, 1 )
 texture = ExtResource( 3 )
 offset = Vector2( -33, 46 )
 
 [node name="ArmRight" type="Sprite" parent="Sprites"]
 position = Vector2( 41.8456, -196.142 )
 rotation = 0.168873
+scale = Vector2( 1, 1 )
 texture = ExtResource( 7 )
 offset = Vector2( -22, 84 )
 

@@ -9,6 +9,7 @@ position = Vector2( 468, 647 )
 texture = ExtResource( 1 )
 texture_scale = 2.0
 color = Color( 1, 0.760784, 0.309804, 1 )
+shadow_enabled = true
 script = ExtResource( 3 )
 
 [node name="Torch" type="Sprite" parent="."]

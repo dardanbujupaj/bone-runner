@@ -1,13 +1,19 @@
 extends RigidBody2D
 
+
 const MAX_BONES = 128
 const MAX_MONITORING = 16
+
+
+export(Texture) var texture: Texture setget _set_texture
+
 
 var bone_number: int
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
 	randomize()
 	
 	$ResetMonitoringTimer.wait_time = rand_range(0.0, 0.5)
@@ -23,7 +29,8 @@ func _process(delta: float) -> void:
 		$RemovalTimer.start()
 
 
-func set_texture(texture: Texture) -> void:
+func _set_texture(new_texture: Texture) -> void:
+	texture = new_texture
 	var image := texture.get_data()
 	
 	var bitmap := BitMap.new()

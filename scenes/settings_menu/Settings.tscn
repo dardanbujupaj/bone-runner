@@ -268,6 +268,3 @@ position = Vector2( 425, 678 )
 
 [node name="Torch2" parent="." instance=ExtResource( 7 )]
 position = Vector2( 1471, 680 )
-
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color( 0.705882, 0.705882, 0.705882, 1 )

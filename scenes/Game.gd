@@ -6,6 +6,10 @@ onready var current_room := $Room
 
 
 func load_room(path: String) -> void:
+	if path.empty():
+		return
+	
+	
 	var next_room: Node2D
 	
 	if prepared_rooms.has(path):
@@ -20,7 +24,10 @@ func load_room(path: String) -> void:
 
 
 func prepare_room(path: String) -> void:
-	call_deferred("_prepare_internal")
+	if path.empty():
+		return
+	
+	call_deferred("_prepare_internal", path)
 
 
 func _prepare_internal(path: String) -> void:

@@ -195,6 +195,7 @@ centered = false
 
 [node name="Door" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1858, 255 )
+destination_room = "res://scenes/finish/Finish.tscn"
 
 [node name="Spikes" parent="." instance=ExtResource( 1 )]
 position = Vector2( 424, 573 )

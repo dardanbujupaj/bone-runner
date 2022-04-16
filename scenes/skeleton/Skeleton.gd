@@ -17,7 +17,9 @@ var start_position: Vector2
 
 var velocity: Vector2
 
-onready var animation_tree = $AnimationTree
+
+onready var animation_tree := $AnimationTree
+onready var state_machine := $AnimationTree["parameters/playback"] as AnimationNodeStateMachinePlayback
 
 onready var hit_area = $HitArea
 
@@ -79,6 +81,9 @@ func can_jump():
 
 
 func die() ->  void:
+	
+	GameState.attempts += 1
+	
 	hit_area.set_collision_mask_bit(2, false)
 	
 	$AudioStreamPlayer2D.stop()
@@ -110,6 +115,14 @@ func create_bone(sprite: Sprite) -> void:
 	
 	# bone.linear_velocity = Vector2(300, 0)
 	get_parent().call_deferred("add_child", bone)
+
+
+func clap() -> void:
+	state_machine.travel("clap")
+
+
+func dance() -> void:
+	state_machine.travel("dance")
 
 
 func _on_HitArea_area_entered(area: Area2D) -> void:

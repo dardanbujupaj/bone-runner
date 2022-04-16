@@ -1,8 +1,14 @@
 extends Node
 
-var prepared_rooms := {}
 
 onready var current_room := $Room
+
+
+var prepared_rooms := {}
+
+
+var attempts = 0.0
+var timer = 0.0
 
 
 func load_room(path: String) -> void:

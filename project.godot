@@ -20,7 +20,7 @@ Settings="*res://settings/Settings.gd"
 Keymap="*res://settings/Keymap.gd"
 MusicEngine="*res://audio/MusicEngine.gd"
 SoundEngine="*res://audio/SoundEngine.gd"
-RoomHelper="*res://scenes/RoomHelper.gd"
+GameState="*res://scenes/GameState.gd"
 
 [display]
 

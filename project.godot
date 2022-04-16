@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="gwj-44"
-run/main_scene="res://scenes/levels/Dungeon01.tscn"
+run/main_scene="res://scenes/Game.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -20,6 +20,7 @@ Settings="*res://settings/Settings.gd"
 Keymap="*res://settings/Keymap.gd"
 MusicEngine="*res://audio/MusicEngine.gd"
 SoundEngine="*res://audio/SoundEngine.gd"
+RoomHelper="*res://scenes/RoomHelper.gd"
 
 [display]
 

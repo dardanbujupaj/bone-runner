@@ -19,6 +19,8 @@ var velocity: Vector2
 
 onready var animation_tree = $AnimationTree
 
+onready var hit_area = $HitArea
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -77,6 +79,8 @@ func can_jump():
 
 
 func die() ->  void:
+	hit_area.set_collision_mask_bit(2, false)
+	
 	$AudioStreamPlayer2D.stop()
 	
 	var nodes_to_check = get_children()
@@ -91,6 +95,7 @@ func die() ->  void:
 	position = start_position
 	velocity = Vector2()
 	
+	hit_area.call_deferred("set_collision_mask_bit", 2, true)
 	
 	
 

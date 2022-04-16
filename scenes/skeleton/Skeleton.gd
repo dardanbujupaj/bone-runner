@@ -1,16 +1,16 @@
 extends KinematicBody2D
 
 
-const ACCELERATION = 1800
-const DECCELERATION = 3600
+const ACCELERATION = 2400
+const DECCELERATION = 4800
 
 const MAX_SPEED = 1000
 
-const JUMP_STRENGTH = 900
+const JUMP_STRENGTH = 1000
 
-const JUMP_GRAVITY = 800
-const RAISE_GRAVITY = 2000
-const FALL_GRAVITY = 3200
+const JUMP_GRAVITY = 1500
+const RAISE_GRAVITY = 3000
+const FALL_GRAVITY = 4500
 
 
 var start_position: Vector2
@@ -60,6 +60,11 @@ func _physics_process(delta: float) -> void:
 	
 	velocity.x = clamp(velocity.x, -MAX_SPEED, MAX_SPEED)
 	
+	if abs(velocity.x) > 1 and not $AudioStreamPlayer2D.playing:
+		$AudioStreamPlayer2D.play()
+	elif abs(velocity.x) <= 1 and $AudioStreamPlayer2D.playing:
+		$AudioStreamPlayer2D.stop()
+	
 	
 	velocity = move_and_slide(velocity, Vector2.UP)
 	
@@ -72,6 +77,8 @@ func can_jump():
 
 
 func die() ->  void:
+	$AudioStreamPlayer2D.stop()
+	
 	var nodes_to_check = get_children()
 	
 	while nodes_to_check.size() > 0:
@@ -88,7 +95,7 @@ func die() ->  void:
 	
 
 func create_bone(sprite: Sprite) -> void:
-	var bone = preload("res://Bone.tscn").instance()
+	var bone = preload("res://scenes/skeleton/Bone.tscn").instance()
 	
 	bone.position = sprite.global_position + sprite.offset - sprite.texture.get_size() / 2
 	bone.rotation = sprite.global_rotation

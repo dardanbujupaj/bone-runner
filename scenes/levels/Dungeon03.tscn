@@ -1,10 +1,12 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://scenes/levels/floor_tiles.png" type="Texture" id=1]
+[ext_resource path="res://scenes/levels/background.png" type="Texture" id=2]
 [ext_resource path="res://scenes/skeleton/Skeleton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/levels/Door.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/levels/Dungeon04.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/levels/Axe.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/levels/Torch.tscn" type="PackedScene" id=7]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 0, 0, 128, 0, 128, 128, 0, 128 )
@@ -187,6 +189,16 @@ points = PoolVector2Array( 0, 0, 128, 0, 128, 128, 0, 128 )
 
 [node name="Dungeon03" type="Node2D"]
 
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+position = Vector2( 1498, 634 )
+color = Color( 0.705882, 0.705882, 0.705882, 1 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 443, 408 )
+texture = ExtResource( 2 )
+centered = false
+offset = Vector2( -443, -408 )
+
 [node name="Door" parent="." instance=ExtResource( 4 )]
 destination_scene = ExtResource( 5 )
 
@@ -204,3 +216,9 @@ tile_data = PoolIntArray( -1, 0, 1, -65536, 0, 2, -65535, 0, 2, -65534, 0, 2, -6
 
 [node name="Skeleton" parent="." instance=ExtResource( 3 )]
 position = Vector2( 306, 1006 )
+
+[node name="Torch" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1534, 789 )
+
+[node name="Torch2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 514, 779 )

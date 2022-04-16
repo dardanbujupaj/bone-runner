@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/walking.ogg-15f42dece2e237d3b877edd1de67c788.oggstr"
+
+[deps]
+
+source_file="res://scenes/skeleton/walking.ogg"
+dest_files=[ "res://.import/walking.ogg-15f42dece2e237d3b877edd1de67c788.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

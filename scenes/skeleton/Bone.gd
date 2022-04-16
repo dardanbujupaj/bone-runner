@@ -8,7 +8,9 @@ extends RigidBody2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	randomize()
+	$AudioStreamPlayer2D.pitch_scale = 1.0 + rand_range(-0.3, 0.4)
+
 
 func set_texture(texture: Texture) -> void:
 	var image := texture.get_data()
@@ -34,3 +36,11 @@ func set_texture(texture: Texture) -> void:
 	$Sprite.position = -center_of_mass
 	
 	position += center_of_mass
+	
+
+func _on_Bone_body_entered(body: Node) -> void:
+	var velocity = linear_velocity.length()
+	if velocity > 10:
+		$AudioStreamPlayer2D.volume_db = linear2db(clamp(velocity, 0, 200) / 200)
+		
+		$AudioStreamPlayer2D.play()

@@ -210,19 +210,20 @@ tile_data = PoolIntArray( -1, 0, 1, -65536, 0, 2, -65535, 0, 2, -65534, 0, 2, -6
 position = Vector2( 349, 888 )
 
 [node name="Move" type="Label" parent="."]
-margin_left = 263.0
-margin_top = 567.0
-margin_right = 681.0
-margin_bottom = 616.0
+margin_left = 167.0
+margin_top = 547.0
+margin_right = 724.0
+margin_bottom = 612.0
+grow_horizontal = 2
 theme = ExtResource( 6 )
 text = "LEFT/RIGHT to move."
 
 [node name="Jump" type="Label" parent="."]
-margin_left = 916.0
-margin_top = 553.0
-margin_right = 1141.0
-margin_bottom = 602.0
-grow_horizontal = 0
+margin_left = 924.0
+margin_top = 423.0
+margin_right = 1222.0
+margin_bottom = 488.0
+grow_horizontal = 2
 theme = ExtResource( 6 )
 text = "UP to jump."
 align = 2

@@ -212,7 +212,7 @@ position = Vector2( 444, 891 )
 position = Vector2( 256, 764 )
 
 [node name="Torch3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1684, 771 )
+position = Vector2( 1476, 768 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
@@ -226,23 +226,23 @@ custom_constants/separation = 20
 alignment = 1
 
 [node name="ThankYou" type="Label" parent="CanvasLayer/Control"]
-margin_top = 210.0
+margin_top = 186.0
 margin_right = 1920.0
-margin_bottom = 259.0
+margin_bottom = 251.0
 text = "THANK YOU FOR PLAYING!"
 align = 1
 
 [node name="Fonts" type="Label" parent="CanvasLayer/Control"]
-margin_top = 279.0
+margin_top = 271.0
 margin_right = 1920.0
-margin_bottom = 328.0
+margin_bottom = 336.0
 text = "Thanks to all playtesters for their valuable feedback!"
 align = 1
 
 [node name="Author" type="Label" parent="CanvasLayer/Control"]
-margin_top = 348.0
+margin_top = 356.0
 margin_right = 1920.0
-margin_bottom = 397.0
+margin_bottom = 421.0
 text = "Code, Art and Sound made by Dardan Bujupaj for Godot Wild Jam 44."
 align = 1
 
@@ -251,5 +251,7 @@ margin_left = 1665.0
 margin_top = 746.0
 margin_right = 1879.0
 margin_bottom = 795.0
+grow_horizontal = 0
 theme = ExtResource( 6 )
 text = "Titlescreen"
+align = 2

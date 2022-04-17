@@ -15,7 +15,6 @@ func _process(delta: float) -> void:
 func skip() -> void:
 	var next = prepared_rooms.keys()[0]
 	GameState.skipped_rooms.append(next.get_file().trim_suffix(".tscn").capitalize())
-	print(GameState.skipped_rooms)
 	load_room(next)
 
 
@@ -36,7 +35,7 @@ func load_room(path: String) -> void:
 		next_room = load(path).instance()
 	
 	
-	# $CanvasLayer/HBoxContainer/RoomName.text = path.get_file().trim_suffix(".tscn").capitalize()
+	$CanvasLayer/HBoxContainer/RoomName.text = path.get_file().trim_suffix(".tscn").capitalize()
 	
 	prepared_rooms.clear()
 	

@@ -24,7 +24,7 @@
 [ext_resource path="res://scenes/skeleton/foot_left.png" type="Texture" id=22]
 [ext_resource path="res://scenes/skeleton/foot_right.png" type="Texture" id=23]
 [ext_resource path="res://scenes/skeleton/Skeleton.gd" type="Script" id=24]
-[ext_resource path="res://scenes/skeleton/walking.ogg" type="AudioStream" id=25]
+[ext_resource path="res://audio/effects/klack_01.ogg" type="AudioStream" id=25]
 
 [sub_resource type="RectangleShape2D" id=18]
 extents = Vector2( 28, 113 )
@@ -2894,6 +2894,7 @@ offset = Vector2( 12, 82 )
 [node name="HandRight" type="Sprite" parent="Sprites"]
 position = Vector2( 60.9758, -123.899 )
 rotation = 0.168873
+scale = Vector2( 1, 1 )
 texture = ExtResource( 5 )
 offset = Vector2( -53, 16 )
 
@@ -2911,18 +2912,17 @@ offset = Vector2( -22, 84 )
 
 [node name="ShankRight" type="Sprite" parent="Sprites"]
 position = Vector2( 27, -67 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 17 )
 offset = Vector2( -18, -53 )
 
 [node name="ThighRight" type="Sprite" parent="Sprites"]
 position = Vector2( 14, -122 )
+scale = Vector2( 1, 1 )
 texture = ExtResource( 18 )
 offset = Vector2( -5, 2 )
 
 [node name="FootRight" type="Sprite" parent="Sprites"]
 position = Vector2( 12, -3 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 23 )
 offset = Vector2( -3, -117 )
 
@@ -3102,7 +3102,12 @@ parameters/playback = SubResource( 9 )
 parameters/conditions/moving = false
 parameters/conditions/not_moving = false
 
+[node name="SoundTimer" type="Timer" parent="."]
+wait_time = 0.1
+
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 25 )
+bus = "Sound"
 
 [connection signal="area_entered" from="HitArea" to="." method="_on_HitArea_area_entered"]
+[connection signal="timeout" from="SoundTimer" to="." method="_on_SoundTimer_timeout"]

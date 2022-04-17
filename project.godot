@@ -21,6 +21,7 @@ Keymap="*res://settings/Keymap.gd"
 MusicEngine="*res://audio/MusicEngine.gd"
 SoundEngine="*res://audio/SoundEngine.gd"
 GameState="*res://scenes/GameState.gd"
+BonePurger="*res://scenes/skeleton/BonePurger.gd"
 
 [display]
 

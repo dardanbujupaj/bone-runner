@@ -9,7 +9,7 @@ var main_volume: float = 0.75 setget _set_main_volume
 var sound_volume: float = 0.75 setget _set_sound_volume
 var music_volume: float = 0.75 setget _set_music_volume
 
-var screenshake_intensity: float = 1.0
+var max_bones: float = 128
 
 
 func _init():
@@ -60,3 +60,4 @@ func _set_font_size(new_size: int) -> void:
 func _get_font_size() -> int:
 	var default_font := preload("res://default_theme.tres").default_font as DynamicFont
 	return default_font.size
+

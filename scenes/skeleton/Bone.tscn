@@ -16,13 +16,10 @@ centered = false
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 1 )
+bus = "Sound"
 
 [node name="ResetMonitoringTimer" type="Timer" parent="."]
 one_shot = true
 
-[node name="RemovalTimer" type="Timer" parent="."]
-one_shot = true
-
 [connection signal="body_entered" from="." to="." method="_on_Bone_body_entered"]
 [connection signal="timeout" from="ResetMonitoringTimer" to="." method="_on_ResetMonitoringTimer_timeout"]
-[connection signal="timeout" from="RemovalTimer" to="." method="_on_RemovalTimer_timeout"]

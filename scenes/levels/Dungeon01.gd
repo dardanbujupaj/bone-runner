@@ -8,6 +8,8 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	GameState.time = 0.0
+	GameState.attempts = 0
 	GameState.run_started = true
 
 

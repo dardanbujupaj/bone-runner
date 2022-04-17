@@ -64,10 +64,10 @@ func _physics_process(delta: float) -> void:
 	
 	velocity.x = clamp(velocity.x, -MAX_SPEED, MAX_SPEED)
 	
-	if abs(velocity.x) > 1 and not $AudioStreamPlayer2D.playing:
-		$AudioStreamPlayer2D.play()
-	elif abs(velocity.x) <= 1 and $AudioStreamPlayer2D.playing:
-		$AudioStreamPlayer2D.stop()
+	if abs(velocity.x) > 1 and $SoundTimer.is_stopped():
+		$SoundTimer.start()
+	elif abs(velocity.x) <= 1 and not $SoundTimer.is_stopped():
+		$SoundTimer.stop()
 	
 	
 	velocity = move_and_slide(velocity, Vector2.UP)
@@ -86,7 +86,7 @@ func die() ->  void:
 	
 	hit_area.set_collision_mask_bit(2, false)
 	
-	$AudioStreamPlayer2D.stop()
+	$SoundTimer.stop()
 	
 	var nodes_to_check = get_children()
 	
@@ -127,3 +127,9 @@ func dance() -> void:
 
 func _on_HitArea_area_entered(area: Area2D) -> void:
 	die()
+
+
+func _on_SoundTimer_timeout() -> void:
+	$SoundTimer.wait_time = rand_range(0.1, 0.2)
+	$AudioStreamPlayer2D.pitch_scale = 1.0 + rand_range(-0.2, 0.2)
+	$AudioStreamPlayer2D.play()

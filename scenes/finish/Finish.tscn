@@ -257,7 +257,7 @@ grow_vertical = 2
 theme = ExtResource( 6 )
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
-margin_right = 351.0
+margin_right = 407.0
 margin_bottom = 65.0
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2"]
@@ -267,15 +267,15 @@ size_flags_horizontal = 3
 text = "Time: "
 
 [node name="Time" type="Label" parent="VBoxContainer/HBoxContainer2"]
-margin_left = 201.0
-margin_right = 351.0
+margin_left = 257.0
+margin_right = 407.0
 margin_bottom = 65.0
 text = "00:00"
 align = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 margin_top = 69.0
-margin_right = 351.0
+margin_right = 407.0
 margin_bottom = 134.0
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
@@ -285,8 +285,8 @@ size_flags_horizontal = 3
 text = "Attempts: "
 
 [node name="Attempts" type="Label" parent="VBoxContainer/HBoxContainer"]
-margin_left = 266.0
-margin_right = 351.0
+margin_left = 322.0
+margin_right = 407.0
 margin_bottom = 65.0
 text = "   0"
 

@@ -2912,17 +2912,18 @@ offset = Vector2( -22, 84 )
 
 [node name="ShankRight" type="Sprite" parent="Sprites"]
 position = Vector2( 27, -67 )
+scale = Vector2( 1, 1 )
 texture = ExtResource( 17 )
 offset = Vector2( -18, -53 )
 
 [node name="ThighRight" type="Sprite" parent="Sprites"]
 position = Vector2( 14, -122 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 18 )
 offset = Vector2( -5, 2 )
 
 [node name="FootRight" type="Sprite" parent="Sprites"]
 position = Vector2( 12, -3 )
+scale = Vector2( 1, 1 )
 texture = ExtResource( 23 )
 offset = Vector2( -3, -117 )
 

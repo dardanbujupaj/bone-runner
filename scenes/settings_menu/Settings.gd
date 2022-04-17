@@ -47,7 +47,7 @@ func _on_Delete_Savegame_pressed() -> void:
 
 
 func _on_Font_item_selected(index: int) -> void:
-	var new_font = $VBoxContainer/HBoxContainer2/Font.get_item_text(index)
+	var new_font = $CanvasLayer/VBoxContainer/Font/Font.get_item_text(index)
 	Settings.font = new_font
 
 
@@ -68,8 +68,6 @@ func _ready() -> void:
 	font_size.value = Settings.font_size
 	
 	max_bones.value = Settings.max_bones
-
-
 
 
 func _on_SettingsMenu_popup_hide() -> void:

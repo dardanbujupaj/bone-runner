@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://scenes/levels/Door.tscn" type="PackedScene" id=1]
 [ext_resource path="res://default_theme.tres" type="Theme" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://scenes/levels/floor_tiles.png" type="Texture" id=5]
 [ext_resource path="res://scenes/settings_menu/Settings.gd" type="Script" id=6]
 [ext_resource path="res://scenes/levels/Torch.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/key_remapping/ActionListItem.tscn" type="PackedScene" id=8]
 
 [sub_resource type="OccluderPolygon2D" id=19]
 polygon = PoolVector2Array( 0, 0, 128, 0, 128, 128, 0, 128 )
@@ -247,8 +248,10 @@ margin_left = 1665.0
 margin_top = 746.0
 margin_right = 1879.0
 margin_bottom = 795.0
+grow_horizontal = 0
 theme = ExtResource( 2 )
 text = "Titlescreen"
+align = 2
 
 [node name="TitleScreenDoor" parent="." instance=ExtResource( 1 )]
 position = Vector2( 1859, 774 )
@@ -280,27 +283,27 @@ margin_bottom = 489.0
 theme = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="CanvasLayer/VBoxContainer"]
-margin_right = 536.0
+margin_right = 653.0
 margin_bottom = 65.0
 text = "Volume"
 align = 1
 
 [node name="MainVolume" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
 margin_top = 69.0
-margin_right = 536.0
+margin_right = 653.0
 margin_bottom = 134.0
 hint_tooltip = "The overall volume of the game."
 
 [node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/MainVolume"]
-margin_right = 226.0
+margin_right = 343.0
 margin_bottom = 65.0
 size_flags_horizontal = 3
 text = "Main"
 
 [node name="Main" type="HSlider" parent="CanvasLayer/VBoxContainer/MainVolume"]
-margin_left = 286.0
+margin_left = 403.0
 margin_top = 24.0
-margin_right = 536.0
+margin_right = 653.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 250, 0 )
 size_flags_vertical = 4
@@ -309,20 +312,20 @@ step = 0.05
 
 [node name="SoundVolume" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
 margin_top = 138.0
-margin_right = 536.0
+margin_right = 653.0
 margin_bottom = 203.0
 hint_tooltip = "The volume of sound effects."
 
 [node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/SoundVolume"]
-margin_right = 226.0
+margin_right = 343.0
 margin_bottom = 65.0
 size_flags_horizontal = 3
 text = "Sound"
 
 [node name="Sound" type="HSlider" parent="CanvasLayer/VBoxContainer/SoundVolume"]
-margin_left = 286.0
+margin_left = 403.0
 margin_top = 24.0
-margin_right = 536.0
+margin_right = 653.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 250, 0 )
 size_flags_vertical = 4
@@ -331,20 +334,20 @@ step = 0.05
 
 [node name="MusicVolume" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
 margin_top = 207.0
-margin_right = 536.0
+margin_right = 653.0
 margin_bottom = 272.0
 hint_tooltip = "The volume of the music."
 
 [node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/MusicVolume"]
-margin_right = 226.0
+margin_right = 343.0
 margin_bottom = 65.0
 size_flags_horizontal = 3
 text = "Music"
 
 [node name="Music" type="HSlider" parent="CanvasLayer/VBoxContainer/MusicVolume"]
-margin_left = 286.0
+margin_left = 403.0
 margin_top = 24.0
-margin_right = 536.0
+margin_right = 653.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 250, 0 )
 size_flags_vertical = 4
@@ -354,55 +357,58 @@ value = 0.5
 
 [node name="Display" type="Label" parent="CanvasLayer/VBoxContainer"]
 margin_top = 276.0
-margin_right = 536.0
+margin_right = 653.0
 margin_bottom = 341.0
 text = "Display"
 align = 1
 
 [node name="FontSize" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
 margin_top = 345.0
-margin_right = 536.0
+margin_right = 653.0
 margin_bottom = 414.0
 hint_tooltip = "Maximum number of rigid bones (lower for more performance)."
 
 [node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/FontSize"]
 margin_top = 2.0
-margin_right = 226.0
+margin_right = 343.0
 margin_bottom = 67.0
 size_flags_horizontal = 3
 text = "Font size"
 
 [node name="FontSize" type="SpinBox" parent="CanvasLayer/VBoxContainer/FontSize"]
-margin_left = 286.0
-margin_right = 536.0
+margin_left = 403.0
+margin_right = 653.0
 margin_bottom = 69.0
 rect_min_size = Vector2( 250, 0 )
 size_flags_vertical = 4
-min_value = 32.0
+min_value = 64.0
 max_value = 80.0
-value = 32.0
+value = 64.0
 rounded = true
 allow_greater = true
 
 [node name="Font" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
 margin_top = 418.0
-margin_right = 536.0
+margin_right = 653.0
 margin_bottom = 489.0
 hint_tooltip = "Maximum number of rigid bones (lower for more performance)."
 
 [node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/Font"]
 margin_top = 3.0
-margin_right = 226.0
+margin_right = 115.0
 margin_bottom = 68.0
 size_flags_horizontal = 3
 text = "Font"
 
 [node name="Font" type="OptionButton" parent="CanvasLayer/VBoxContainer/Font"]
-margin_left = 286.0
-margin_right = 536.0
+margin_left = 175.0
+margin_right = 653.0
 margin_bottom = 71.0
 rect_min_size = Vector2( 250, 0 )
 size_flags_vertical = 4
+text = "Beholden-Regular"
+items = [ "Beholden-Regular", null, false, 0, null, "Roboto-Regular", null, false, 1, null, "Roboto-Bold", null, false, 2, null ]
+selected = 0
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer"]
 anchor_left = 1.0
@@ -442,8 +448,52 @@ value = 1.0
 rounded = true
 allow_greater = true
 
+[node name="Keys" type="Label" parent="CanvasLayer/VBoxContainer2"]
+margin_top = 142.0
+margin_right = 585.0
+margin_bottom = 207.0
+text = "Keymap"
+align = 1
+
+[node name="ActionListItem" parent="CanvasLayer/VBoxContainer2" instance=ExtResource( 8 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 211.0
+margin_right = 585.0
+margin_bottom = 282.0
+text = "Jump"
+action = "up"
+
+[node name="ActionListItem2" parent="CanvasLayer/VBoxContainer2" instance=ExtResource( 8 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 286.0
+margin_right = 585.0
+margin_bottom = 357.0
+text = "Left"
+action = "left"
+
+[node name="ActionListItem3" parent="CanvasLayer/VBoxContainer2" instance=ExtResource( 8 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 361.0
+margin_right = 585.0
+margin_bottom = 432.0
+text = "Right"
+action = "right"
+
 [connection signal="value_changed" from="CanvasLayer/VBoxContainer/MainVolume/Main" to="." method="_on_Main_value_changed"]
 [connection signal="value_changed" from="CanvasLayer/VBoxContainer/SoundVolume/Sound" to="." method="_on_Sound_value_changed"]
 [connection signal="value_changed" from="CanvasLayer/VBoxContainer/MusicVolume/Music" to="." method="_on_Music_value_changed"]
 [connection signal="value_changed" from="CanvasLayer/VBoxContainer/FontSize/FontSize" to="." method="_on_FontSize_value_changed"]
+[connection signal="item_selected" from="CanvasLayer/VBoxContainer/Font/Font" to="." method="_on_Font_item_selected"]
 [connection signal="value_changed" from="CanvasLayer/VBoxContainer2/MaxBones/MaxBones" to="." method="_on_MaxBones_value_changed"]

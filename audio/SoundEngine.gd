@@ -6,11 +6,11 @@ const sounds = {
 	
 	
 	"UIHover": {
-		"stream": preload("res://audio/effects/UI_Click_Metallic_mono.wav"),
+		"stream": preload("res://audio/effects/klack_01.ogg"),
 		"volume": 0
 		},
 	"UIClick": {
-		"stream":preload("res://audio/effects/UI_Click_Distinct_mono.wav"),
+		"stream":preload("res://audio/effects/klack_01.ogg"),
 		"volume": 0
 		},
 	

@@ -83,6 +83,7 @@ func can_jump():
 func die() ->  void:
 	
 	GameState.attempts += 1
+	GameState.room_attempts += 1
 	
 	hit_area.set_collision_mask_bit(2, false)
 	

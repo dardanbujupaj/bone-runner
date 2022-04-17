@@ -187,7 +187,7 @@ points = PoolVector2Array( 0, 0, 128, 0, 128, 128, 0, 128 )
 } ]
 0/z_index = 0
 
-[node name="Dungeon01" type="Node2D"]
+[node name="SpikeAndAxe" type="Node2D"]
 
 [node name="Background" type="Sprite" parent="."]
 texture = ExtResource( 1 )

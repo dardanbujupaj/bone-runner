@@ -8,9 +8,9 @@ on:
 
 env:
   # Godot version to use for build
-  GODOT_VERSION: 3.5
+  GODOT_VERSION: 3.4.4
   # Prerelease if applicable (e.g beta1), else empty
-  GODOT_PRERELEASE: beta4
+  GODOT_PRERELEASE: ""
   # Prefix of the release asset (zip files)
   PACKAGE_PREFIX: ${{ github.event.repository.name }} # use gh repository name
   VERSION: ${{ github.event.inputs.version }} # this only works with workflow dispatch, for automatic releases the version has to supplied somehow else

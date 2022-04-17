@@ -4,7 +4,7 @@
 [ext_resource path="res://scenes/levels/floor_tiles.png" type="Texture" id=2]
 [ext_resource path="res://scenes/skeleton/Skeleton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/levels/Door.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/levels/Dungeon01.gd" type="Script" id=5]
+[ext_resource path="res://scenes/levels/Tutorial.gd" type="Script" id=5]
 [ext_resource path="res://default_theme.tres" type="Theme" id=6]
 [ext_resource path="res://scenes/levels/background.png" type="Texture" id=8]
 
@@ -195,7 +195,7 @@ texture = ExtResource( 8 )
 centered = false
 
 [node name="Door" parent="." instance=ExtResource( 4 )]
-destination_room = "res://scenes/levels/Dungeon02.tscn"
+destination_room = "res://scenes/levels/SpikeEncounter.tscn"
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 1 )

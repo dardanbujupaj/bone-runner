@@ -7,9 +7,9 @@
 script = ExtResource( 2 )
 
 [node name="Axe" type="Sprite" parent="."]
-position = Vector2( 1, 3 )
+position = Vector2( 2, -2 )
 texture = ExtResource( 1 )
-offset = Vector2( 1, 183 )
+offset = Vector2( 6, 177 )
 
 [node name="HitBox" type="Area2D" parent="Axe"]
 position = Vector2( -2, 265 )
@@ -17,9 +17,11 @@ collision_layer = 4
 collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Axe/HitBox"]
+position = Vector2( 8, -5 )
 polygon = PoolVector2Array( -30, -51, -55, -50, -78, -29, -76, 8, -44, 33, 23, 33, 56, 14, 58, -33, 35, -51 )
 
 [node name="RigidBody2D" type="RigidBody2D" parent="Axe/HitBox"]
+position = Vector2( 6, -6 )
 collision_layer = 0
 collision_mask = 8
 mode = 3

@@ -273,7 +273,7 @@ text = "LEFT/RIGHT to move."
 
 [node name="Door" parent="." instance=ExtResource( 1 )]
 position = Vector2( 1917, 713 )
-destination_room = "res://scenes/levels/Dungeon01.tscn"
+destination_room = "res://scenes/levels/Tutorial.tscn"
 
 [node name="SettingsDoor" parent="." instance=ExtResource( 1 )]
 position = Vector2( 4, 717 )
